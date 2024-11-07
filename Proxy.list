@@ -27885,8 +27885,8 @@ DOMAIN-SUFFIX,dyndns-pics.com
 DOMAIN-SUFFIX,dyndns.org
 DOMAIN-SUFFIX,dyndns.pro
 DOMAIN-SUFFIX,dynssl.com
-DOMAIN-SUFFIX,dynu.com
-DOMAIN-SUFFIX,dynu.net
+# DOMAIN-SUFFIX,dynu.com
+# DOMAIN-SUFFIX,dynu.net
 DOMAIN-SUFFIX,dysfz.cc
 DOMAIN-SUFFIX,dzze.com
 DOMAIN-SUFFIX,e-classical.com.tw
