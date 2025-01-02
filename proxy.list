@@ -3,6 +3,17 @@
 # DOMAIN-KEYWORD,openai
 # DOMAIN-KEYWORD,anthropic
 # DOMAIN-KEYWORD,Claude
+
+# mpubg
+DOMAIN-SUFFIX,amsoveasea.com
+DOMAIN-SUFFIX,vasdgame.com
+DOMAIN-SUFFIX,pubgmobile.com
+DOMAIN-SUFFIX,anticheatexpert.com
+DOMAIN-SUFFIX,proximabeta.com
+DOMAIN-SUFFIX,igamecj.com
+DOMAIN-SUFFIX,gjacky.com
+DOMAIN-SUFFIX,gpubgm.com
+
 # 域名后缀匹配
 DOMAIN,copilot.microsoft.com
 DOMAIN-SUFFIX,bing.com
