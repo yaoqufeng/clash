@@ -4,6 +4,10 @@
 # DOMAIN-KEYWORD,anthropic
 # DOMAIN-KEYWORD,Claude
 # 域名后缀匹配
+DOMAIN-SUFFIX,tktn.be
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googleapis.com
+
 DOMAIN,copilot.microsoft.com
 DOMAIN-SUFFIX,bing.com
 
