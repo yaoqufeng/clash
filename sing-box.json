@@ -7,48 +7,125 @@
       { "tag": "dns_fakeip", "address": "fakeip" }
     ],
     "rules": [
-      { "outbound": "any", "server": "dns_proxy" },
+      { "outbound": "dns_proxy", "server": "dns_proxy" },
       { "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
       { "rule_set": "geosite-cn", "server": "dns_direct" }
     ],
     "fakeip": { "enabled": true, "inet4_range": "198.18.0.0/15" }
   },
   "inbounds": [
-    { "type": "tun", "tag": "tun-in", "interface_name": "tun0", "address": "172.19.0.1/30", "auto_route": true, "strict_route": true, "stack": "gvisor", "sniff": true, "sniff_override_destination": true }
+    {
+      "type": "tun", 
+      "tag": "tun-in", 
+      "interface_name": "tun0", 
+      "address": "172.19.0.1/30", 
+      "auto_route": true, 
+      "strict_route": true, 
+      "stack": "gvisor", 
+      "sniff": true, 
+      "sniff_override_destination": true
+    }
   ],
   "outbounds": [
     {
-      "type": "selector",
-      "tag": "✨ AI",
-      "outbounds": [ "direct", "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH", "block" ]
+      "type": "selector", 
+      "tag": "✨ AI", 
+      "outbounds": [ "direct", "美国-自动", "所有-自动", "所有-手动", "block" ]
     },
     {
-      "type": "selector",
-      "tag": "🎥 media",
-      "outbounds": [ "direct", "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH", "block" ]
+      "type": "selector", 
+      "tag": "🎥 media", 
+      "outbounds": [ "direct", "美国-自动", "所有-自动", "所有-手动", "block" ]
     },
     {
-      "type": "selector",
-      "tag": "🌍 国外",
-      "outbounds": [ "direct", "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH", "block" ]
+      "type": "selector", 
+      "tag": "🌍 国外", 
+      "outbounds": [ "direct", "美国-自动", "所有-自动", "所有-手动", "block" ]
     },
     {
-      "type": "selector",
-      "tag": "➡️ 国内",
+      "type": "selector", 
+      "tag": "➡️ 国内", 
       "outbounds": [ "direct", "block" ]
     },
-
-    // 自动化URL检测部分
-    { "type": "urltest", "tag": "所有-自动", "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH" ], "url": "http://www.gstatic.com/generate_204", "interval": "1m0s" },
-    { "type": "urltest", "tag": "美国-自动", "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH" ] },
-    { "type": "selector", "tag": "所有-手动", "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH"] },
-
-    // 节点配置
-    { "type": "vless", "tag": "🇺🇸 VLESS-Oracle-US-SJ", "server": "192.9.155.69", "server_port": 8881, "uuid": "1173bc25-1050-530d-46fd-5f99b48874fa", "flow": "xtls-rprx-vision", "tls": { "enabled": true, "server_name": "www.nazhumi.com", "utls": { "enabled": true, "fingerprint": "chrome" }, "reality": { "enabled": true, "public_key": "MPUvcVawmRDxCyRqnA5GL9pPbkf4mrJNm11-I5xwyE8" } } },
-    { "type": "vmess", "tag": "🇺🇸 VMess-Oracle-US-JS", "server": "cf.877774.xyz", "server_port": 443, "uuid": "1173bc25-1050-530d-46fd-5f99b48874fa", "security": "auto", "transport": { "type": "ws", "path": "/vmess-argo?ed=2560", "headers": { "Host": "oracle-sj.gpt.us.kg" } }, "tls": { "enabled": true, "server_name": "oracle-sj.gpt.us.kg" } },
-    { "type": "vless", "tag": "🇺🇸 VLESS-Oracle-US-CH", "server": "207.211.177.66", "server_port": 8881, "uuid": "72342657-e611-fd65-055f-e293547bd9a0", "flow": "xtls-rprx-vision", "tls": { "enabled": true, "server_name": "www.nazhumi.com", "utls": { "enabled": true, "fingerprint": "chrome" }, "reality": { "enabled": true, "public_key": "52Qe98h_3Tnq_pL0IAYBAZKnKBezMmZ6b4CZd9jMTDc" } } },
-    { "type": "vmess", "tag": "🇺🇸 VMess-Oracle-US-CH", "server": "cf.877774.xyz", "server_port": 443, "uuid": "72342657-e611-fd65-055f-e293547bd9a0", "security": "auto", "transport": { "type": "ws", "path": "/vmess-argo?ed=2560", "headers": { "Host": "oracle-ch.gpt.us.kg" } }, "tls": { "enabled": true, "server_name": "oracle-ch.gpt.us.kg" } },
-
+    {
+      "type": "urltest", 
+      "tag": "所有-自动", 
+      "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH" ], 
+      "url": "http://www.gstatic.com/generate_204", 
+      "interval": "1m0s"
+    },
+    {
+      "type": "urltest", 
+      "tag": "美国-自动", 
+      "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH" ]
+    },
+    {
+      "type": "selector", 
+      "tag": "所有-手动", 
+      "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇋 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH"]
+    },
+    {
+      "type": "vless", 
+      "tag": "🇺🇸 VLESS-Oracle-US-SJ", 
+      "server": "192.9.155.69", 
+      "server_port": 8881, 
+      "uuid": "1173bc25-1050-530d-46fd-5f99b48874fa", 
+      "flow": "xtls-rprx-vision", 
+      "tls": { 
+        "enabled": true, 
+        "server_name": "www.nazhumi.com", 
+        "utls": { "enabled": true, "fingerprint": "chrome" }, 
+        "reality": { "enabled": true, "public_key": "MPUvcVawmRDxCyRqnA5GL9pPbkf4mrJNm11-I5xwyE8" }
+      }
+    },
+    {
+      "type": "vmess", 
+      "tag": "🇺🇸 VMess-Oracle-US-JS", 
+      "server": "cf.877774.xyz", 
+      "server_port": 443, 
+      "uuid": "1173bc25-1050-530d-46fd-5f99b48874fa", 
+      "security": "auto", 
+      "transport": { 
+        "type": "ws", 
+        "path": "/vmess-argo?ed=2560", 
+        "headers": { "Host": "oracle-sj.gpt.us.kg" } 
+      }, 
+      "tls": { 
+        "enabled": true, 
+        "server_name": "oracle-sj.gpt.us.kg" 
+      }
+    },
+    {
+      "type": "vless", 
+      "tag": "🇺🇸 VLESS-Oracle-US-CH", 
+      "server": "207.211.177.66", 
+      "server_port": 8881, 
+      "uuid": "72342657-e611-fd65-055f-e293547bd9a0", 
+      "flow": "xtls-rprx-vision", 
+      "tls": { 
+        "enabled": true, 
+        "server_name": "www.nazhumi.com", 
+        "utls": { "enabled": true, "fingerprint": "chrome" }, 
+        "reality": { "enabled": true, "public_key": "52Qe98h_3Tnq_pL0IAYBAZKnKBezMmZ6b4CZd9jMTDc" }
+      }
+    },
+    {
+      "type": "vmess", 
+      "tag": "🇺🇸 VMess-Oracle-US-CH", 
+      "server": "cf.877774.xyz", 
+      "server_port": 443, 
+      "uuid": "72342657-e611-fd65-055f-e293547bd9a0", 
+      "security": "auto", 
+      "transport": { 
+        "type": "ws", 
+        "path": "/vmess-argo?ed=2560", 
+        "headers": { "Host": "oracle-ch.gpt.us.kg" } 
+      }, 
+      "tls": { 
+        "enabled": true, 
+        "server_name": "oracle-ch.gpt.us.kg" 
+      }
+    },
     { "type": "direct", "tag": "direct" },
     { "type": "dns", "tag": "dns-out" },
     { "type": "block", "tag": "block" }
@@ -63,7 +140,10 @@
     "rule_set": [
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "download_detour": "🌍 国外" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs", "download_detour": "🌍 国外" },
-      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs", "download_detour": "🌍 国外" }
-    ]
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs", "download_detour": "🌍 国外" },
+      { "tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs", "download_detour": "🌍 国外" }
+    ],
+    "auto_detect_interface": true,
+    "final": "🌍 国外"
   }
 }
