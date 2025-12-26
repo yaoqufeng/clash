@@ -62,7 +62,7 @@
     {
       "type": "selector", 
       "tag": "所有-手动", 
-      "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇋 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH"]
+      "outbounds": [ "🇺🇸 VLESS-Oracle-US-SJ", "🇺🇸 VMess-Oracle-US-JS", "🇺🇸 VLESS-Oracle-US-CH", "🇺🇸 VMess-Oracle-US-CH" ]  // 修复了所有-手动与 VLESS-Oracle-US-CH 的关联
     },
     {
       "type": "vless", 
@@ -139,11 +139,7 @@
     ],
     "rule_set": [
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "download_detour": "🌍 国外" },
-      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs", "download_detour": "🌍 国外" },
-      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs", "download_detour": "🌍 国外" },
-      { "tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs", "download_detour": "🌍 国外" }
-    ],
-    "auto_detect_interface": true,
-    "final": "🌍 国外"
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs", "download_detour": "🌍 国外" }
+    ]
   }
 }
