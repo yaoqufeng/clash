@@ -26,7 +26,7 @@
     {
       "type": "selector",
       "tag": "🎥 media",
-      "outbounds": [ "direct", "所有-自动", "所有-手动", "香港-自动", "新加坡-自动", "美国-自动", "波兰-自动", "日本-自动", "韩国-自动", "澳洲-自动", "加拿大-自动", "block" ]
+      "outbounds": [ "direct", "美国-自动", "所有-自动", "所有-手动", "block" ]
     },
     {
       "type": "selector",
