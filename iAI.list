@@ -1,8 +1,8 @@
 # AI
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,grok.com
-DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,nvidia.com
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,x.com
