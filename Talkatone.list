@@ -16,5 +16,5 @@ IP-CIDR,63.251.124.0/24
 
 # GoogleVoice
 DOMAIN,lens.l.google.com
-DOMAIN-SUFFIX,googleusercontent.com,📞 Talkatone
-DOMAIN-SUFFIX,googleapis.com,📞 Talkatone
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googleapis.com
