@@ -1,4 +1,5 @@
 # Talkatone
+
 DOMAIN-SUFFIX,inner-active.mobi
 DOMAIN-SUFFIX,mobilefuse.com
 DOMAIN-SUFFIX,inmobi.com
@@ -15,6 +16,7 @@ IP-CIDR,205.164.56.0/24
 IP-CIDR,63.251.124.0/24
 
 # GoogleVoice
+
 DOMAIN,lens.l.google.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googleapis.com
