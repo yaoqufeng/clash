@@ -1,16 +1,18 @@
 # Talkatone
+
 DOMAIN-SUFFIX,tktn.at
 DOMAIN-SUFFIX,tktn.be
-DOMAIN-SUFFIX,vm.talkatone.com
+DOMAIN-SUFFIX,talkatone.com
 DOMAIN-SUFFIX,tenor.com
 DOMAIN-SUFFIX,inner-active.mobi
 DOMAIN-SUFFIX,mobilefuse.com
 DOMAIN-SUFFIX,inmobi.com
 DOMAIN-SUFFIX,crashlytics.com
-DOMAIN-SUFFIX,talkatone.com
 DOMAIN-SUFFIX,kochava.com
 DOMAIN-SUFFIX,cohere.com
 DOMAIN-SUFFIX,agkn.com
+DOMAIN-SUFFIX,ip-api.com
+IP-CIDR,216.172.154.0/24
 IP-CIDR,50.117.27.0/24
 IP-CIDR,69.46.75.0/24
 IP-CIDR,205.164.56.0/24
