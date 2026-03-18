@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,inmobicdn.net
 DOMAIN-SUFFIX,doubleclick-cn.net
-DOMAIN-SUFFIX,ow.pubmatic.com
+DOMAIN-SUFFIX,pubmatic.com
 DOMAIN-SUFFIX,app-analytics-services.com
 IP-CIDR,216.172.154.0/24
 IP-CIDR,50.117.27.0/24
