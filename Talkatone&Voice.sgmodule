@@ -90,7 +90,6 @@ DOMAIN-SUFFIX,vm.talkatone.com,{{{代理分流}}}
 # 贴图服务地址，一般需要代理
 DOMAIN-SUFFIX,tenor.com,{{{代理分流}}}
 # Google Voice
-# Google Voice
 DOMAIN,lens.l.google.com,{{{代理分流}}}
 DOMAIN-SUFFIX,voice.google.com,{{{代理分流}}}
 DOMAIN-SUFFIX,voice.telephony.goog,{{{代理分流}}}
