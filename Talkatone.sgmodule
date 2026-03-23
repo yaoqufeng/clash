@@ -89,6 +89,10 @@ DOMAIN-SUFFIX,tktn.be,{{{代理分流}}}
 DOMAIN-SUFFIX,vm.talkatone.com,{{{代理分流}}}
 # 贴图服务地址，一般需要代理
 DOMAIN-SUFFIX,tenor.com,{{{代理分流}}}
+# Google Voice
+DOMAIN,lens.l.google.com,{{{代理分流}}}
+DOMAIN-SUFFIX,googleusercontent.com,{{{代理分流}}}
+DOMAIN-SUFFIX,googleapis.com,{{{代理分流}}}
 
 # 以下为该软件可能需要走直连的规则
 DOMAIN-SUFFIX,agkn.com,DIRECT
